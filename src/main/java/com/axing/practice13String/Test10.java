@@ -15,7 +15,8 @@ public class Test10 {
         System.out.println(strProduct("5", "10"));
 
     }
-    public static String strProduct(String num1,String num2){
+
+    public static String strProduct(String num1, String num2) {
         // 字符串变成数值
         // 循环遍历取出字符并转换为数值
         // 定义数值接收字符变数值的结果

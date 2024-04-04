@@ -25,6 +25,7 @@ public class Student {
 
     /**
      * 获取
+     *
      * @return id
      */
     public String getId() {
@@ -33,6 +34,7 @@ public class Student {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(String id) {
@@ -41,6 +43,7 @@ public class Student {
 
     /**
      * 获取
+     *
      * @return username
      */
     public String getUsername() {
@@ -49,6 +52,7 @@ public class Student {
 
     /**
      * 设置
+     *
      * @param username
      */
     public void setUsername(String username) {
@@ -57,6 +61,7 @@ public class Student {
 
     /**
      * 获取
+     *
      * @return password
      */
     public String getPassword() {
@@ -65,6 +70,7 @@ public class Student {
 
     /**
      * 设置
+     *
      * @param password
      */
     public void setPassword(String password) {

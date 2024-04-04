@@ -28,6 +28,7 @@ public class Car {
 
     /**
      * 获取
+     *
      * @return brand
      */
     public String getBrand() {
@@ -36,6 +37,7 @@ public class Car {
 
     /**
      * 设置
+     *
      * @param brand
      */
     public void setBrand(String brand) {
@@ -44,6 +46,7 @@ public class Car {
 
     /**
      * 获取
+     *
      * @return price
      */
     public Double getPrice() {
@@ -52,6 +55,7 @@ public class Car {
 
     /**
      * 设置
+     *
      * @param price
      */
     public void setPrice(Double price) {
@@ -60,6 +64,7 @@ public class Car {
 
     /**
      * 获取
+     *
      * @return color
      */
     public String getColor() {
@@ -68,6 +73,7 @@ public class Car {
 
     /**
      * 设置
+     *
      * @param color
      */
     public void setColor(String color) {

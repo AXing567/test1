@@ -43,34 +43,32 @@ public class Test {
                 }
             }
         }
-        for (Student stu : list){
+        for (Student stu : list) {
             System.out.println(stu);
         }
 
 
         // 刘德华的成绩改为95并输出所有
         flag = true;
-        while(flag){
+        while (flag) {
             flag = false;
-            for(int i = 0 ; i < list.size() ; i++){
-                if(list.get(i).getName().equals("刘德华")){
+            for (int i = 0; i < list.size(); i++) {
+                if (list.get(i).getName().equals("刘德华")) {
                     list.remove(list.get(i));
                     flag = true;
                     break;
                 }
             }
         }
-        list.add(new Student("刘德华",95));
+        list.add(new Student("刘德华", 95));
         System.out.println("---------------------------");
-        for(int i = 0 ; i < list.size() ; i++)
-        {
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
 
         // 输出成绩不合格的学生
-        for(int i = 0 ; i < list.size() ; i++)
-        {
-            if(list.get(i).getScore() < 60){
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getScore() < 60) {
                 System.out.println(list.get(i).getName() + "成绩不合格");
             }
         }

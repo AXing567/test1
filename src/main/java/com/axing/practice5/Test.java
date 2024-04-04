@@ -42,7 +42,7 @@ public class Test {
             }
         System.out.println();
         System.out.println("从小到大排序：");
-        for(int i : list){
+        for (int i : list) {
             System.out.print(i + " ");
         }
         //冒泡排序，从大到小
@@ -56,7 +56,7 @@ public class Test {
             }
         System.out.println();
         System.out.println("从大到小排序：");
-        for(int i : list){
+        for (int i : list) {
             System.out.print(i + " ");
         }
 

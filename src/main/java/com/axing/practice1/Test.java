@@ -42,27 +42,22 @@ public class Test {
 //        }
 
 
-
-
         System.out.println("请输入球队名称：");
         Scanner sc2 = new Scanner(System.in);
         String name = sc2.nextLine();
         List<Integer> list = new ArrayList<>();
-        for(Integer key : map.keySet()){
-            if (map.get(key).equals(name)){
+        for (Integer key : map.keySet()) {
+            if (map.get(key).equals(name)) {
                 list.add(key);
             }
         }
-        if(list.size() > 0){
-            for(Integer key : list){
+        if (list.size() > 0) {
+            for (Integer key : list) {
                 System.out.print(key + " ");
             }
-        }
-        else{
+        } else {
             System.out.println("没有获得过世界杯");
         }
-
-
 
 
     }

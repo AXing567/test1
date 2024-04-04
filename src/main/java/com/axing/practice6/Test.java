@@ -20,7 +20,7 @@ public class Test {
         set.add("王五");
         set.add("钱六");
         set.add("张三");
-        for(String str : set){
+        for (String str : set) {
             System.out.print(str + " ");
         }
 

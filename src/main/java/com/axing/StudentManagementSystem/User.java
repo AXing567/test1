@@ -27,6 +27,7 @@ public class User {
 
     /**
      * 获取
+     *
      * @return id
      */
     public String getId() {
@@ -35,6 +36,7 @@ public class User {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(String id) {
@@ -43,6 +45,7 @@ public class User {
 
     /**
      * 获取
+     *
      * @return pwd
      */
     public String getPwd() {
@@ -51,6 +54,7 @@ public class User {
 
     /**
      * 设置
+     *
      * @param pwd
      */
     public void setPwd(String pwd) {
@@ -59,6 +63,7 @@ public class User {
 
     /**
      * 获取
+     *
      * @return idNumber
      */
     public String getIdNumber() {
@@ -67,6 +72,7 @@ public class User {
 
     /**
      * 设置
+     *
      * @param idNumber
      */
     public void setIdNumber(String idNumber) {
@@ -75,6 +81,7 @@ public class User {
 
     /**
      * 获取
+     *
      * @return phoneNumber
      */
     public String getPhoneNumber() {
@@ -83,6 +90,7 @@ public class User {
 
     /**
      * 设置
+     *
      * @param phoneNumber
      */
     public void setPhoneNumber(String phoneNumber) {

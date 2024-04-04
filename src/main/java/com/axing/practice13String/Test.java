@@ -28,7 +28,7 @@ public class Test {
             } else {
                 System.out.println("登录失败！账号或密码错误！（失败三次后锁定账户，请联系客服）");
                 System.out.println("还剩" + (3 - i) + "次机会");
-                if(3 - i == 0){
+                if (3 - i == 0) {
                     System.out.println("账户已锁定");
                 }
             }

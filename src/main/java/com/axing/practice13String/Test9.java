@@ -32,7 +32,7 @@ public class Test9 {
                 // 删除该位置的Java
                 str = str.substring(index + findStr.length());
                 sum++;
-            }else break;
+            } else break;
         }
 
         System.out.println("总共有" + sum + "个" + findStr);

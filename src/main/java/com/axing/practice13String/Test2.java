@@ -19,7 +19,7 @@ public class Test2 {
         str = sc.next();
 
         System.out.println("拆分输出字符串");
-        for(int i = 0 ; i < str.length() ; i++){
+        for (int i = 0; i < str.length(); i++) {
             System.out.println(str.charAt(i));
         }
     }

@@ -11,10 +11,10 @@ package com.axing.practice13String;
  */
 public class TestReplace {
     public static void main(String[] args) {
-        String[] arr = {"TMD","CNM"};
+        String[] arr = {"TMD", "CNM"};
         String talk = "aaaaTMD,CNM";
         for (int i = 0; i < arr.length; i++) {
-            talk = talk.replace(arr[i],"***");
+            talk = talk.replace(arr[i], "***");
         }
         System.out.println("替换后的为：");
         System.out.println(talk);

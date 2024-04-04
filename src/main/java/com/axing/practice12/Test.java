@@ -34,7 +34,7 @@ public class Test {
             }
         }
         // 如果不重复则添加学生信息
-        if (flag){
+        if (flag) {
             Student[] s = new Student[students.length + 1];
             for (int i = 0; i < students.length; i++) {
                 s[i] = students[i];
@@ -54,8 +54,8 @@ public class Test {
         int deleteId = sc.nextInt();
         for (int i = 0; i < students.length; i++) {
             if (students[i].getStudentId() == deleteId) {
-                for(int j = i ; j < students.length - 1 ; j++){
-                    students[j] = students[j+1];
+                for (int j = i; j < students.length - 1; j++) {
+                    students[j] = students[j + 1];
                 }
                 students[students.length - 1] = null;
                 System.out.println("删除成功");

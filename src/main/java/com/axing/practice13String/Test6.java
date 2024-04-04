@@ -22,11 +22,11 @@ public class Test6 {
         int word = 0;
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
-            if(c >= '0' && c <= '9'){
+            if (c >= '0' && c <= '9') {
                 num++;
-            }else if(c >= 'a' && c <= 'z'){
+            } else if (c >= 'a' && c <= 'z') {
                 word++;
-            }else if(c >= 'A' && c <= 'Z'){
+            } else if (c >= 'A' && c <= 'Z') {
                 word++;
             }
         }

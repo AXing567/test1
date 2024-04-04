@@ -45,8 +45,8 @@ public class Test7 {
 
         // 判断最后一位是否是数字或者大写字母X
         char c = str.charAt(str.length() - 1);
-        if (c < '0' || c > '9'){
-            if(c != 'X'){
+        if (c < '0' || c > '9') {
+            if (c != 'X') {
                 return false;
             }
         }

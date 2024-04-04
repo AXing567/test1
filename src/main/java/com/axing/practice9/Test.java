@@ -30,21 +30,21 @@ public class Test {
         for (int i = 0; i < list.size(); i++) {
             age += list.get(i).getScore();
         }
-        System.out.println("所有学生的平均年龄为：" + Math.floor(age/list.size() * 100) / 100);
+        System.out.println("所有学生的平均年龄为：" + Math.floor(age / list.size() * 100) / 100);
 
 
         // 计算各个班级的平均分
         // 将各个班级添加到集合中
         Set<String> set = new HashSet<>();
-        for(Student stu : list){
+        for (Student stu : list) {
             set.add(stu.getClassNum());
         }
 
-        for(String classNum : set){
+        for (String classNum : set) {
             double total = 0.0;
             int sum = 0;
-            for(Student stu:list){
-                if(stu.getClassNum().equals(classNum)){
+            for (Student stu : list) {
+                if (stu.getClassNum().equals(classNum)) {
                     total += stu.getScore();
                     sum++;
                 }

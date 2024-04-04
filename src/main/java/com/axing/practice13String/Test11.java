@@ -19,9 +19,9 @@ public class Test11 {
         str = sb.toString();
         int sum = 0;
         for (int i = 0; i < str.length(); i++) {
-            if(str.charAt(i) == ' ')
+            if (str.charAt(i) == ' ')
                 break;
-            sum ++;
+            sum++;
         }
         System.out.println("最后一个单词的长度为：" + sum);
     }

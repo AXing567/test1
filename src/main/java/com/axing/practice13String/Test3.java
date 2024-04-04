@@ -26,7 +26,7 @@ public class Test3 {
         String result = toUpper(num);
         System.out.println("大写金额为：" + result);
         // 判断是否大于7位
-        while(true){
+        while (true) {
             if (length > 7) {
                 System.out.println("金额太大，无法转换，请重新输入：");
                 num = sc.nextInt();

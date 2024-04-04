@@ -27,6 +27,7 @@ public class Student {
 
     /**
      * 获取
+     *
      * @return id
      */
     public String getId() {
@@ -35,6 +36,7 @@ public class Student {
 
     /**
      * 设置
+     *
      * @param id
      */
     public void setId(String id) {
@@ -43,6 +45,7 @@ public class Student {
 
     /**
      * 获取
+     *
      * @return name
      */
     public String getName() {
@@ -51,6 +54,7 @@ public class Student {
 
     /**
      * 设置
+     *
      * @param name
      */
     public void setName(String name) {
@@ -59,6 +63,7 @@ public class Student {
 
     /**
      * 获取
+     *
      * @return age
      */
     public int getAge() {
@@ -67,6 +72,7 @@ public class Student {
 
     /**
      * 设置
+     *
      * @param age
      */
     public void setAge(int age) {
@@ -75,6 +81,7 @@ public class Student {
 
     /**
      * 获取
+     *
      * @return address
      */
     public String getAddress() {
@@ -83,6 +90,7 @@ public class Student {
 
     /**
      * 设置
+     *
      * @param address
      */
     public void setAddress(String address) {

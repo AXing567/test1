@@ -50,6 +50,5 @@ public class Test5VerificationCode {
         System.out.println(vCode);
 
 
-
     }
 }
