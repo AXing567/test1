@@ -3,7 +3,7 @@ package com.axing.practice14ArrayList;
 /**
  * @projectName: test1
  * @package: com.axing.practice14ArrayList
- * @className: StudentSystem
+ * @className: Student
  * @author: Axing
  * @description: TODO
  * @date: 2024/3/29 20:34
@@ -72,6 +72,6 @@ public class Student {
     }
 
     public String toString() {
-        return "StudentSystem{id = " + id + ", username = " + username + ", password = " + password + "}";
+        return "Student{id = " + id + ", username = " + username + ", password = " + password + "}";
     }
 }

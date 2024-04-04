@@ -1,6 +1,7 @@
 package com.axing.StudentManagementSystem;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -16,14 +17,18 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<User> users = new ArrayList<>();
+        loop:
         while (true) {
             System.out.println("欢迎来到学生管理系统");
-            System.out.println("请选择操作1登录 2注册 3忘记密码");
+            System.out.println("请选择操作1登录 2注册 3忘记密码 4退出");
             String choice = sc.next();
             switch (choice) {
                 case "1" -> login(users);
                 case "2" -> register(users);
                 case "3" -> forgetPwd(users);
+                case "4" -> {
+                    break loop;
+                }
                 default -> System.out.println("输入错误，请重新输入。");
             }
         }
@@ -32,17 +37,81 @@ public class App {
     private static void login(ArrayList<User> users) {
         String id;
         String pwd;
-        String VerificationCode;
+        String verificationCode;
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < 3; i++) {
 //        键入用户名
-
+            System.out.println("请输入用户名：");
+            id = sc.next();
 //        如果未注册则提示：用户名未注册，请先注册
-
+            int index = indexId(users, id);
+            if (index < 0) {
+                System.out.println(id + "未注册，请先注册。");
+                return;
+            }
 //        键入密码
-
+            System.out.println("请输入密码：");
+            pwd = sc.next();
+            while (true) {
 //        键入验证码
+                String vc = verificationCode();
+                System.out.println("Verification code is：" + vc);
+                verificationCode = sc.next();
 //        先判断验证码
-
+                if (verificationCode.equalsIgnoreCase(vc)) break;
+                System.out.println("验证码错误，请重新输入验证码");
+            }
 //        再判断用户名和密码是否正确，有三次机会
+            if (users.get(index).getPwd().equals(pwd)) {
+                // 登陆成功
+                System.out.println("密码正确，登陆成功");
+                StudentSystem.main(null);
+                break;
+            }
+            System.out.println("密码错误，请重新输入");
+        }
+
+    }
+
+    /**
+     * @param :
+     * @return String
+     * @author ax
+     * @description 验证码长度位5, 四位大写或者小写字母及一位数字组成，字母可重复
+     * @date 2024/4/4 下午9:40
+     */
+    public static String verificationCode() {
+
+//        建立字符库
+        StringBuilder sb = new StringBuilder();
+        for (char i = 'a'; i <= 'z'; i++) {
+            sb.append(i);
+        }
+        for (char i = 'A'; i <= 'Z'; i++) {
+            sb.append(i);
+        }
+        for (char i = '0'; i <= '9'; i++) {
+            sb.append(i);
+        }
+        char[] word = sb.toString().toCharArray();
+//        清空StringBuilder
+        sb.delete(0, sb.length());
+//        追加验证码到StringBuilder
+        Random rd = new Random();
+        for (int i = 0; i < 4; i++) {
+//            添加字母
+            sb.append(word[rd.nextInt(word.length - 10)]);
+        }
+//        添加数字
+        sb.append(word[rd.nextInt(word.length - 10, word.length)]);
+//        打乱数字和字母的顺序
+        word = sb.toString().toCharArray();
+        int index = rd.nextInt(4);
+        char c = word[index];
+        word[index] = word[4];
+        word[4] = c;
+//        返回验证码
+        return new String(word);
 
     }
 
@@ -99,22 +168,12 @@ public class App {
             }
             System.out.println("手机号码格式有误，请重新输入。");
         }
+        users.add(new User(id, pwd, idNumber, phoneNumber));
         System.out.println("注册成功！");
 
     }
 
-    public static boolean checkPhoneNumber(String phoneNumber) {
-//        长度是否为11位
-        if (phoneNumber.length() != 11) return false;
-//        不能以0开头
-        if (phoneNumber.charAt(0) == '0') return false;
-//        必须都是数字
-        for (int i = 0; i < phoneNumber.length(); i++) {
-            char c = phoneNumber.charAt(i);
-            if (c < '0' || c > '9') return false;
-        }
-        return true;
-
+    private static void forgetPwd(ArrayList<User> users) {
     }
 
     public static boolean checkIdNumber(String idNumber) {
@@ -138,7 +197,7 @@ public class App {
 
     public static boolean checkId(ArrayList<User> users, String id) {
         // 校验用户名是否唯一
-        if (contains(users, id)) {
+        if (containsId(users, id)) {
             return false;
         }
 
@@ -171,15 +230,29 @@ public class App {
         return true;
     }
 
-    public static boolean contains(ArrayList<User> users, String id) {
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getId().equals(id))
-                return true;
+    public static boolean checkPhoneNumber(String phoneNumber) {
+//        长度是否为11位
+        if (phoneNumber.length() != 11) return false;
+//        不能以0开头
+        if (phoneNumber.charAt(0) == '0') return false;
+//        必须都是数字
+        for (int i = 0; i < phoneNumber.length(); i++) {
+            char c = phoneNumber.charAt(i);
+            if (c < '0' || c > '9') return false;
         }
-        return false;
+        return true;
+
     }
 
-    private static void forgetPwd(ArrayList<User> users) {
+    public static boolean containsId(ArrayList<User> users, String id) {
+        return indexId(users, id) >= 0;
+    }
+
+    public static int indexId(ArrayList<User> users, String id) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getId().equals(id)) return i;
+        }
+        return -1;
     }
 
 

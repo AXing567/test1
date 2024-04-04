@@ -3,7 +3,7 @@ package com.axing.practice9;
 /**
  * @projectName: test1
  * @package: com.axing.practice9
- * @className: StudentSystem
+ * @className: Student
  * @author: Axing
  * @description: TODO
  * @date: 2024/3/24 21:17
