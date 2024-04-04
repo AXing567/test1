@@ -74,7 +74,6 @@ public class App {
     }
 
     /**
-     * @param :
      * @return String
      * @author ax
      * @description 验证码长度位5, 四位大写或者小写字母及一位数字组成，字母可重复
@@ -182,6 +181,7 @@ public class App {
 //        不能以0开头
         if (idNumber.charAt(0) == '0') return false;
 //        前17位必须都是数字
+
         for (int i = 0; i < idNumber.length() - 1; i++) {
             char c = idNumber.charAt(i);
             if (c < '0' || c > '9') return false;
@@ -189,8 +189,7 @@ public class App {
 //        最后一位可以是数字也可以是大写或小写x
         char c = idNumber.charAt(idNumber.length() - 1);
         if (c != 'x' && c != 'X') {
-            if (c < '0' || c > '9')
-                return false;
+            return c >= '0' && c <= '9';
         }
         return true;
     }
