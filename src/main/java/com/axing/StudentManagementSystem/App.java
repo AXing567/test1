@@ -73,6 +73,48 @@ public class App {
 
     }
 
+    /**
+     * @param :
+     * @return String
+     * @author ax
+     * @description 验证码长度位5, 四位大写或者小写字母及一位数字组成，字母可重复
+     * @date 2024/4/4 下午9:40
+     */
+    public static String verificationCode() {
+
+//        建立字符库
+        StringBuilder sb = new StringBuilder();
+        for (char i = 'a'; i <= 'z'; i++) {
+            sb.append(i);
+        }
+        for (char i = 'A'; i <= 'Z'; i++) {
+            sb.append(i);
+        }
+        for (char i = '0'; i <= '9'; i++) {
+            sb.append(i);
+        }
+        char[] word = sb.toString().toCharArray();
+//        清空StringBuilder
+        sb.delete(0, sb.length());
+//        追加验证码到StringBuilder
+        Random rd = new Random();
+        for (int i = 0; i < 4; i++) {
+//            添加字母
+            sb.append(word[rd.nextInt(word.length - 10)]);
+        }
+//        添加数字
+        sb.append(word[rd.nextInt(word.length - 10, word.length)]);
+//        打乱数字和字母的顺序
+        word = sb.toString().toCharArray();
+        int index = rd.nextInt(4);
+        char c = word[index];
+        word[index] = word[4];
+        word[4] = c;
+//        返回验证码
+        return new String(word);
+
+    }
+
     private static void register(ArrayList<User> users) {
         System.out.println("注册用户：");
         Scanner sc = new Scanner(System.in);
@@ -132,81 +174,6 @@ public class App {
     }
 
     private static void forgetPwd(ArrayList<User> users) {
-        // 键入用户名
-        Scanner sc = new Scanner(System.in);
-        System.out.println("请输入用户名：");
-        String id = sc.next();
-        // 判断当前用户是否存在 如不存在，提示未注册并退出
-        int index = indexId(users, id);
-        if (index == -1) {
-            System.out.println(id + "未注册");
-            return;
-        }
-        // 键入身份证号码
-        System.out.println("请输入身份证号码：");
-        String idNum = sc.next();
-        // 键入手机号码
-        System.out.println("请输入手机号码：");
-        String phoneNum = sc.next();
-        // 判断手机号码、身份证号码、是否正确
-        User user = users.get(index);
-        // 如果不一致，提示信息不匹配，修改失败
-        if (!user.getIdNumber().equals(idNum)) {
-            System.out.println("信息不匹配，修改失败");
-            return;
-        }
-        // 如果不一致，提示信息不匹配，修改失败
-        if (!user.getPhoneNumber().equals(phoneNum)) {
-            System.out.println("信息不匹配，修改失败");
-            return;
-        }
-        // 如果一致，提示输入新密码
-        System.out.println("请输入新密码：");
-        String newPwd = sc.next();
-        users.get(index).setPwd(newPwd);
-        System.out.println("密码修改成功");
-
-    }
-
-    /**
-     * @return String
-     * @author ax
-     * @description 验证码长度位5, 四位大写或者小写字母及一位数字组成，字母可重复
-     * @date 2024/4/4 下午9:40
-     */
-    public static String verificationCode() {
-
-//        建立字符库
-        StringBuilder sb = new StringBuilder();
-        for (char i = 'a'; i <= 'z'; i++) {
-            sb.append(i);
-        }
-        for (char i = 'A'; i <= 'Z'; i++) {
-            sb.append(i);
-        }
-        for (char i = '0'; i <= '9'; i++) {
-            sb.append(i);
-        }
-        char[] word = sb.toString().toCharArray();
-//        清空StringBuilder
-        sb.delete(0, sb.length());
-//        追加验证码到StringBuilder
-        Random rd = new Random();
-        for (int i = 0; i < 4; i++) {
-//            添加字母
-            sb.append(word[rd.nextInt(word.length - 10)]);
-        }
-//        添加数字
-        sb.append(word[rd.nextInt(word.length - 10, word.length)]);
-//        打乱数字和字母的顺序
-        word = sb.toString().toCharArray();
-        int index = rd.nextInt(4);
-        char c = word[index];
-        word[index] = word[4];
-        word[4] = c;
-//        返回验证码
-        return new String(word);
-
     }
 
     public static boolean checkIdNumber(String idNumber) {
@@ -215,7 +182,6 @@ public class App {
 //        不能以0开头
         if (idNumber.charAt(0) == '0') return false;
 //        前17位必须都是数字
-
         for (int i = 0; i < idNumber.length() - 1; i++) {
             char c = idNumber.charAt(i);
             if (c < '0' || c > '9') return false;
@@ -223,7 +189,8 @@ public class App {
 //        最后一位可以是数字也可以是大写或小写x
         char c = idNumber.charAt(idNumber.length() - 1);
         if (c != 'x' && c != 'X') {
-            return c >= '0' && c <= '9';
+            if (c < '0' || c > '9')
+                return false;
         }
         return true;
     }
