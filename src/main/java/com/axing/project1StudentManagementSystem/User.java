@@ -1,8 +1,8 @@
-package com.axing.StudentManagementSystem;
+package com.axing.project1StudentManagementSystem;
 
 /**
  * @projectName: test1
- * @package: com.axing.StudentManagementSystem
+ * @package: com.axing.project1StudentManagementSystem
  * @className: User
  * @author: Axing
  * @description: TODO

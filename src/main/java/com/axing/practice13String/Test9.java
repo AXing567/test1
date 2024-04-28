@@ -3,7 +3,7 @@ package com.axing.practice13String;
 /**
  * @projectName: test1
  * @package: com.axing.practice13String
- * @className: Test9
+ * @className: Test9Collections
  * @author: Axing
  * @description: 在String类的API中，有如下两个方法：
  * <p>

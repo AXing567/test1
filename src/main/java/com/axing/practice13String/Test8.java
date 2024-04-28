@@ -3,7 +3,7 @@ package com.axing.practice13String;
 /**
  * @projectName: test1
  * @package: com.axing.practice13String
- * @className: Test8
+ * @className: Test8Collections
  * @author: Axing
  * @description: 定义一个方法，
  * 把 int 数组中的数据按照指定的格式拼接成一个字符串返回，

@@ -1,4 +1,4 @@
-package com.axing.StudentManagementSystem;
+package com.axing.project1StudentManagementSystem;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * @projectName: test1
- * @package: com.axing.StudentManagementSystem
+ * @package: com.axing.project1StudentManagementSystem
  * @className: App
  * @author: Axing
  * @description: TODO
