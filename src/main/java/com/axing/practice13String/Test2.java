@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * @projectName: test1
  * @package: com.axing.practice13String
- * @className: Test2
+ * @className: Test2Runnable
  * @author: Axing
  * @description: 键盘录入一个字符串，使用程序实现在控制台遍历该字符串
  * @date: 2024/3/28 8:34

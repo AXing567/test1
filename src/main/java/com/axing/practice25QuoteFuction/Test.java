@@ -4,32 +4,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Test extends Father{
+/**
+ * @projectName: test1
+ * @package: com.axing.practice25QuoteFuction
+ * @className: Test
+ * @author: Axing
+ * @description: TODO
+ * @date: 2024/4/28 10:59
+ * @version: 1.0
+ */
+public class Test {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
-        Collections.addAll(list,"1","2","3","4","5","6","7","8");
-        List<Integer> list2 = list.stream().map(Integer::parseInt).toList();
-        System.out.println(list2);
-
-        // 2的倍数
-        Father father = new Father();
-        list2.stream().filter(father::even).forEach(System.out::println);
-        list2.stream().filter(new Test()::even).forEach(System.out::println);
-
-
-    }
-    public void test(){
-        ArrayList<String> list = new ArrayList<>();
-        Collections.addAll(list,"1","2","3","4","5","6","7","8");
-        List<Integer> list2 = list.stream().map(Integer::parseInt).toList();
-        System.out.println(list2);
-        list2.stream().filter(this::even).forEach(System.out::println);
-        list2.stream().filter(super::even).forEach(System.out::println);
-
-
-    }
-
-    public boolean even(int n) {
-        return super.even(n);
+        // 引用方法的练习
+        //字符串列表转换为数字列表
+        ArrayList<String> strList = new ArrayList<>();
+        Collections.addAll(strList,"1","2","3","4","5","6","7","8");
+        List<Integer> intList = strList.stream().map(Integer::parseInt).toList();
+        intList.forEach(System.out::println);
     }
 }
