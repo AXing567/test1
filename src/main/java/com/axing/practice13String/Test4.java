@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * @projectName: test1
  * @package: com.axing.practice13String
- * @className: Test4
+ * @className: Test4Server
  * @author: Axing
  * @description: 键盘输入任意字符串，打乱里面的内容
  * @date: 2024/3/29 9:28
