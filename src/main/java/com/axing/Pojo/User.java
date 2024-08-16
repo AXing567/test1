@@ -36,7 +36,9 @@ public class User {
      * @return userName
      */
     public Charset getUserName() {
+        ;
         return userName;
+
     }
 
     /**
