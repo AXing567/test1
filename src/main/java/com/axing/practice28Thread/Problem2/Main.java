@@ -3,7 +3,7 @@ package com.axing.practice28Thread.Problem2;
 /**
  * @projectName: test1
  * @package: com.axing.practice28Thread.Problem2
- * @className: Main
+ * @className: Server
  * @author: Axing
  * @description: TODO
  * @date: 2024/5/16 上午9:51

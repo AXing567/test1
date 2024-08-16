@@ -6,7 +6,7 @@ import java.util.Collections;
 /**
  * @projectName: test1
  * @package: com.axing.practice28Thread.Problem5
- * @className: Main
+ * @className: Server
  * @author: Axing
  * @description: TODO
  * @date: 2024/5/16 下午5:03

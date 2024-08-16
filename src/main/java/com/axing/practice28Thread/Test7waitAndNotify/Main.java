@@ -5,7 +5,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 /**
  * @projectName: test1
  * @package: com.axing.practice28Thread.Test7waitAndNotify
- * @className: Main
+ * @className: Server
  * @author: Axing
  * @description: TODO
  * @date: 2024/5/15 下午3:32
